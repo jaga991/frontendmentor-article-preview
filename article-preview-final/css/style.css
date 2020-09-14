@@ -1,0 +1,291 @@
+/*global*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+    --color-vdgb: hsl(217, 19%, 35%);
+    --color-ddb: hsl(214, 17%, 51%);
+    --color-gb: hsl(212, 23%, 69%);
+    --color-lgb: hsl(210, 46%, 95%);
+
+    --main-font: 'Manrope', sans-serif;
+}
+
+* *::before *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-lgb);
+}
+
+.main-text {
+    color: var(--color-vdgb);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    font-family: var(--main-font);
+}
+
+.main-subtext {
+    color: var(--color-ddb);
+    font-weight: 500;
+    font-family: var(--main-font);
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/*hero*/
+
+#hero {
+    height: 280px;
+    width: 740px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+/*hero-img*/
+
+#hero-img {
+    width: 40%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background-image: url(/images/drawers.jpg);
+    background-size: cover;
+}
+
+/*hero-content*/
+
+#hero-content {
+    padding: 25px;
+    width: 60%;
+    height: (100% - padding);
+}
+
+/*hero-content  text-container*/
+#text-container {
+    height: 75%;
+    width: 100%;
+    padding-bottom: 3px;
+}
+
+#text-container h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+
+#text-container p {
+    font-size: 1.4rem;
+}
+
+/*hero-content  user-container*/
+#user-container {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    
+}
+
+#user-img {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+}
+
+#user-container span {
+    display: inline-block;
+    height: 4rem;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+}
+
+#user-container span p {
+    margin: 0;
+}
+
+#user-container span p:first-child {
+    font-size: 1.2rem;
+}
+
+
+#share-icon-container {
+    display: inline-block;
+    background: var(--color-lgb);
+    background-image: url(/images/icon-share.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-self: center;
+    z-index: 2;
+}
+
+#share-icon-container:hover {
+    background: var(--color-ddb);
+    background-image: url(/images/icon-share-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+#link-container {
+    width: 19rem;
+    height: 5rem;
+    background: var(--color-vdgb);
+    border-radius: 10px;
+    top: 15rem;
+    left: 56rem;
+    position: absolute;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+#link-container:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 21px solid transparent;
+	border-top-color: var(--color-vdgb);
+	border-bottom: 0;
+	margin-left: -21px;
+    margin-bottom: -12px;
+    ;
+}
+
+#link-container #share-text {
+    height: 100%;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: auto;
+}
+
+#link-container a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#link-container .space-evenly-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fab {
+    color: white;
+}
+
+@media only screen and (max-width: 850px) {
+    /*changing height, width, flex-direction of section*/
+    #hero {
+        height: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 140px;
+        margin-bottom: 140px;
+    }
+
+    /*changing width, height, border-radius of hero-img*/
+    #hero-img {
+        position: absolute;
+        width: 100%;
+        height: 470px;
+        border-radius: 10px 10px 0 0;
+        background-image: url(/images/drawers.jpg);
+        background-size: cover;
+    }
+
+    /*changing to hero-content*/
+    #hero-content {
+        padding: 0;
+        padding-top: 70%;
+        padding-bottom: 25px;
+        width: 85%;
+        height: auto;
+        align-self: center;
+    }
+
+    #link-container {
+        width: 100%;
+        height: 11%;
+        background: var(--color-vdgb);
+        border-radius: 10px;
+        top: 89%;
+        left: 0rem;
+        position: absolute;
+        display: flex;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #link-container::after {
+        display: none;
+    }
+
+    #link-container .space-evenly-container {
+        width: 50%;
+    }
+
+    #share-icon-container {
+        position: relative;
+        top: 9px;
+    }
+}
+    
+    
+    
+
+}
+
+@media only screen and (max-width: 760px) {
+    #hero-content {
+        padding-top: 80%;
+    }
+}
+
+@media only screen and (max-width: 672px) {
+    #hero-content {
+        padding-top: 85%;
+    }
+}
+
+
+@media only screen and (max-width: 638px) {
+    #hero-img {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #hero-content {
+        padding-top: 87%;
+    }
+}
